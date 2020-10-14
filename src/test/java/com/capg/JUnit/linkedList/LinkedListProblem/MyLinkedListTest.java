@@ -95,4 +95,25 @@ public class MyLinkedListTest {
 		Assert.assertTrue(result);
 	}
 
+	@Test
+	public void whenSearchedAValue_shouldReturnTrue_ifPresent() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		MyNode<Integer> myForthNode = new MyNode(45);
+		MyNode<Integer> myFifthNode = new MyNode(34);
+
+		MyLinkedList myLinkedList = new MyLinkedList();
+
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myForthNode);
+		myLinkedList.append(myFifthNode);
+		myLinkedList.printMyNodes();
+
+		boolean result = myLinkedList.search(30).equals(mySecondNode);
+		Assert.assertTrue(result);
+	}
+
 }
