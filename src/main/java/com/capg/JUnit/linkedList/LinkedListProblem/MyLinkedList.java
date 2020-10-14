@@ -67,6 +67,13 @@ public class MyLinkedList {
 		return tempNode;
 	}
 
+	public void insertAt(INode newNode, int key) {
+		INode myNode = search(key);
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
 		INode tempNode = head;

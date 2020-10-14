@@ -116,4 +116,25 @@ public class MyLinkedListTest {
 		Assert.assertTrue(result);
 	}
 
+	@Test
+	public void givenANumber_whenAdded_shouldBeAddedAfterAMentionedElement() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		MyNode<Integer> myForthNode = new MyNode(40);
+
+		MyLinkedList myLinkedList = new MyLinkedList();
+
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.insertAt(myForthNode, 30);
+
+		myLinkedList.printMyNodes();
+
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode);
+		Assert.assertTrue(result);
+	}
+
 }
