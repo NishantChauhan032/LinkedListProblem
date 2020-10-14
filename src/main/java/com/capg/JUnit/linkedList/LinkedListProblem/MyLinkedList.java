@@ -1,7 +1,5 @@
 package com.capg.JUnit.linkedList.LinkedListProblem;
 
-import jdk.internal.jline.internal.Log;
-
 public class MyLinkedList {
 
 	public INode head;
@@ -47,6 +45,15 @@ public class MyLinkedList {
 			return tempNode;
 		}
 		
+		public INode popLast() {
+			INode tempNode = head;
+			while(!tempNode.getNext().equals(tail)) {
+				tempNode = tempNode.getNext();
+			}
+			tempNode.setNext(null);
+			this.tail = tempNode;
+			return tempNode;
+		}
 		
 	public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
