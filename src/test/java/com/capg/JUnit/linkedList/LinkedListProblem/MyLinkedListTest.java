@@ -159,5 +159,24 @@ public class MyLinkedListTest {
 		Assert.assertTrue(result);
 		
 	}
+	@Test
+	public void givenANumbers_WhenAddedToList_ShouldBeSorted() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+		
+		SortedLinkedList mySortedLinkedList = new SortedLinkedList();
+		
+		mySortedLinkedList.sortAndInsert (myFirstNode);
+		mySortedLinkedList.sortAndInsert (mySecondNode);
+		mySortedLinkedList.sortAndInsert(myThirdNode);
+		mySortedLinkedList.sortAndInsert (myFourthNode);
+		mySortedLinkedList.adjustTail();
+		
+		boolean result = mySortedLinkedList.head.equals(mySecondNode) &&  mySortedLinkedList.tail.equals(myFourthNode);
+		Assert.assertTrue(result);
+		mySortedLinkedList.printMyNodes();
+	}
 
 }
