@@ -153,6 +153,7 @@ public class MyLinkedListTest {
 		myLinkedList.delete(40);
 		
 		myLinkedList.printMyNodes();
+		System.out.println("Size after deletion : "+myLinkedList.sizeOfList());
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myForthNode);
 		Assert.assertTrue(result);
