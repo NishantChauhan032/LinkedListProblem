@@ -153,10 +153,30 @@ public class MyLinkedListTest {
 		myLinkedList.delete(40);
 		
 		myLinkedList.printMyNodes();
+		System.out.println("Size after deletion : "+myLinkedList.sizeOfList());
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myForthNode);
 		Assert.assertTrue(result);
 		
+	}
+	@Test
+	public void givenANumbers_WhenAddedToList_ShouldBeSorted() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+		
+		SortedLinkedList mySortedLinkedList = new SortedLinkedList();
+		
+		mySortedLinkedList.sortAndInsert (myFirstNode);
+		mySortedLinkedList.sortAndInsert (mySecondNode);
+		mySortedLinkedList.sortAndInsert(myThirdNode);
+		mySortedLinkedList.sortAndInsert (myFourthNode);
+		mySortedLinkedList.adjustTail();
+		
+		boolean result = mySortedLinkedList.head.equals(mySecondNode) &&  mySortedLinkedList.tail.equals(myFourthNode);
+		Assert.assertTrue(result);
+		mySortedLinkedList.printMyNodes();
 	}
 
 }

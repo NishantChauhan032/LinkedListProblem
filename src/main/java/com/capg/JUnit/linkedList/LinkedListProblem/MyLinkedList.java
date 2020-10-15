@@ -96,5 +96,16 @@ public class MyLinkedList {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
+	
+	public int sizeOfList() {
+		int count = 0;
+		INode current = this.head;
+		
+		while(current != null) {
+			count++;
+			current = current.getNext();
+		}
+		return count;
+	}
 
 }
